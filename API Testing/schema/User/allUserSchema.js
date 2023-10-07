@@ -11,6 +11,6 @@ const allUserSchema = {
         },
         required: ['id', 'email', 'first_name', 'last_name'],
     }
-};
+}
 
 module.exports = allUserSchema

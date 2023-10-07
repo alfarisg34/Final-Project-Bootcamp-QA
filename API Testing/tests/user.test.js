@@ -1,17 +1,17 @@
 var request = require('supertest')('https://reqres.in/')
 const chai = require('chai')
 const chaiJsonSchemaajv = require('chai-json-schema-ajv')
-const allUserSchema = require('./schema/allUserSchema')
-const userSchema = require('./schema/userSchema')
-const payloadCreateUser = require('./schema/payloadCreateUser')
-const resultCreateUserSchema = require('./schema/resultCreateUserSchema')
-const resultUpdateUserSchema = require('./schema/resultUpdateUserSchema')
+const allUserSchema = require('../schema/User/allUserSchema')
+const userSchema = require('../schema/User/userSchema')
+const payloadCreateUser = require('../schema/User/payloadCreateUser')
+const resultCreateUserSchema = require('../schema/User/resultCreateUserSchema')
+const resultUpdateUserSchema = require('../schema/User/resultUpdateUserSchema')
 
 chai.use(chaiJsonSchemaajv)
 const expect = chai.expect
 
 describe('Users API Tests', function () {
-    afterEach(async function () {
+    after(async function () {
         // await new Promise(res => setTimeout(res, 1000 * 60))
     })
     it('Validasi API Get Lits Users', async function () {
