@@ -32,7 +32,7 @@ describe('E2E_USER_CHECKOUT', function () {
 	})
 
 	it('E2E_001 - Coba membuka halaman utama', async function () {
-		await homePage.openPage()
+		// await homePage.openPage()
 
 		const massage = await homePage.getWelcomeMassage()
 		expect(massage).to.be.equal('WELCOME')
