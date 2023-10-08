@@ -8,7 +8,7 @@ class HomePage extends Page {
 	}
 
 	// element locators
-	selectLanguageEl = By.css('#select-language')
+	selectLanguageEl = By.css('')
 
 	// page action
 	async openPage() {
@@ -17,11 +17,11 @@ class HomePage extends Page {
 	/**
 	 * @param {string} search
 	 */
-    async searchProcess(search) {
+    async Process(search) {
 		await this.driver.findElement(this.searchFormEl).sendKeys(search)
 		await this.driver.findElement(this.searchButtonEl).click()
 	}
-    async getWelcomeMassage() {
+    async getMassage() {
 		return await this.driver.findElement(this.welcomeMassageEl).getText()
 	}
 }
