@@ -1,0 +1,28 @@
+Api Testing  
+  -login
+  -register  
+  -crud user
+Mobile testing
+  -e2e
+  -home page
+Performance Testing
+  -API login
+  -API register
+  -API users
+Load Testing (hybrid)
+  -login page
+  -register Page
+  -inventory page
+  -product
+  -cart
+  -women
+  -men
+Web testing
+  -e2e
+  -Homepage  
+    -fitur ganti bahasa
+    -function button cart  
+    -fitur search(case positif dan negatif)
+    -semua navbar(masing-masing 1 kategori)  
+  -Registerpage(case positif dan case negatif)  
+  -Loginpage(case positif dan case negatif)
