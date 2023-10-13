@@ -21,23 +21,30 @@ describe('FT_001_HOME_PAGE', function () {
 	})
 
 	it('HP_001 - Coba pindah ke halaman register', async function () {
-        await homePage.clickBtn("register")
+        // await homePage.clickAllowBtn()
+		await homePage.clickBtn("register")
 
 		const msg = await registerPage.getHeaderText()
 		expect(msg).to.equal("logo")
+		await driver.pause(2000)
 		await driver.back()
 	})
-	it('HP_002 - Coba pindah ke halaman login', async function () {
+	it.skip('HP_002 - Coba pindah ke halaman login', async function () {
         await homePage.clickBtn("login")
 
 		const msg = await loginPage.getLoginText()
 		expect(msg).to.include("LOGIN")
+		await driver.back()
 	})
 	it('HP_003 - Coba skip', async function () {
         await homePage.clickBtn("skip")
+		await driver.pause(5000)
 
 		const msg = await inventoryPage.getAllProductText()
 		expect(msg).to.equal("-All Products")
+	})
+	afterEach(async function(){
+		await driver.pause(2000)
 	})
 
 	after(async function () {

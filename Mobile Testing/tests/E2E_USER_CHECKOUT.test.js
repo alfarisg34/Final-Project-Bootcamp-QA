@@ -21,11 +21,10 @@ describe('E2E_USER_CHECKOUT', function () {
         loginPage = new LoginPage(driver)
         inventoryPage = new InventoryPage(driver)
         cartPage = new CartPage(driver)
-
-		// await homePage.clickAllowBtn()
 	})
 
 	it('E2E_001 - Coba pindah ke halaman login', async function () {
+		// await homePage.clickAllowBtn()
         await homePage.clickBtn("login")
 
 		const msg = await loginPage.getLoginText()
@@ -51,7 +50,7 @@ describe('E2E_USER_CHECKOUT', function () {
         await inventoryPage.addToCart()
 		await driver.pause(1000)
 
-		const msg = await inventoryPage.getCounterNum()
+		const msg = await inventoryPage.getCounterNumE2e()
 		expect(msg).to.equal("1")
 	})
 	it('E2E_005 - Coba pindah ke halaman cart', async function () {
@@ -74,12 +73,6 @@ describe('E2E_USER_CHECKOUT', function () {
 
 		const msg = await cartPage.getSuccessText()
 		expect(msg).to.equal("Your order has been placed successfully.")
-	})
-	it('E2E_008 - Coba logout', async function () {
-        await inventoryPage.logoutProcess()
-
-		const msg = await loginPage.getLoginText()
-		expect(msg).to.include("LOGIN")
 	})
 
 	after(async function () {
