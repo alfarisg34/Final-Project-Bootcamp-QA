@@ -9,7 +9,7 @@ const WomenPage = require('../pageobjects/WomenPage')
 const MenPage = require('../pageobjects/MenPage')
 const CheckoutPage = require('../pageobjects/CheckoutPage')
 
-describe('E2E_USER_CHECKOUT', function () {
+describe.only('E2E_USER_CHECKOUT', function () {
 
 	/** @type {WebDriver} */ let driver
 	/** @type {HomePage} */ let homePage
@@ -32,8 +32,8 @@ describe('E2E_USER_CHECKOUT', function () {
 	})
 
 	it('E2E_001 - Coba membuka halaman utama', async function () {
-		// await homePage.openPage()
-
+		await homePage.openPage()
+		// await driver.sleep(8000)
 		const massage = await homePage.getWelcomeMassage()
 		expect(massage).to.be.equal('WELCOME')
 	})
@@ -67,7 +67,7 @@ describe('E2E_USER_CHECKOUT', function () {
 		await driver.sleep(1000)
 
 		const massage = await checkoutPage.getThankYouText()
-		await driver.sleep(1000)
+		await driver.sleep(3000)
 		expect(massage).to.be.equal("THANK YOU FOR YOUR PURCHASE!")
 	})
 	

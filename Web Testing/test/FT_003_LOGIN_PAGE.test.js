@@ -4,7 +4,7 @@ const setupDriver = require('../utils/setupDriver')
 const LoginPage = require('../pageobjects/LoginPage')
 const DashboardPage = require('../pageobjects/DashboardPage')
 
-describe.only('FT_002_REGISTER_PAGE', function () {
+describe('FT_003_LOGIN_PAGE', function () {
 
 	/** @type {WebDriver} */ let driver
 	/** @type {LoginPage} */ let loginPage

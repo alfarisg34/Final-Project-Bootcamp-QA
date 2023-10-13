@@ -29,7 +29,7 @@ describe('FT_001_HOME_PAGE', function () {
 	})
 
 	it('HP_001 - Coba membuka halaman utama', async function () {
-		// await homePage.openPage()
+		await homePage.openPage()
 
 		const massage = await homePage.getWelcomeMassage()
 		expect(massage).to.be.equal('WELCOME')

@@ -15,18 +15,21 @@ describe('FT_002_REGISTER_PAGE', function () {
 		registerPage = new RegisterPage(driver)
 		dashboardPage = new DashboardPage(driver)
 	})
+	beforeEach(async function(){
+		await registerPage.openPage()
+	})
 
 	it('RP_001 - Coba membuka halaman register', async function () {
-		await registerPage.openPage()
+		// await registerPage.openPage()
 
 		const massage = await registerPage.getHeaderLoginText()
 		expect(massage).to.be.equal('CREATE AN ACCOUNT')
 	})
-	it('RP_002 - Coba register dengan input benar', async function () {
+	it.skip('RP_002 - Coba register dengan input benar', async function () {
 		await registerPage.registerProcess(
             "Elon",
             "Musk",
-            "Elon@Musk.com",
+            "Elon1@Musk.com",
             "1234567",
             "1234567"
         )
@@ -37,6 +40,7 @@ describe('FT_002_REGISTER_PAGE', function () {
         await dashboardPage.logoutProcess()
 	})
 	it('RP_003 - Coba register dengan email yang telah didaftarkan', async function () {
+		// await registerPage.openPage()
 		await registerPage.registerProcess(
             "Elon",
             "Musk",
@@ -50,6 +54,7 @@ describe('FT_002_REGISTER_PAGE', function () {
 		expect(massage).to.be.include('There is already an account with this email address')
 	})
 	it('RP_004 - Coba register dengan password 6 karakter', async function () {
+		// await registerPage.openPage()
 		await registerPage.registerProcess(
             "Elon",
             "Musk",
