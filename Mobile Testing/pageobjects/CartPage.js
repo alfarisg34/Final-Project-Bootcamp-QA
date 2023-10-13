@@ -49,13 +49,23 @@ class CartPage extends Page {
 		]);
 		await this.codBtn.click()
 		await this.driver.pause(500)
+		await this.driver.touchPerform([
+			{ action: "press", options: { x: 300, y: 1000 } },
+			{ action: "wait", options: { ms: 500 } },
+			{ action: "moveTo", options: { x: 300, y: 500 } },
+			{ action: "release" },
+		]);
 		var btn = await this.placeOrderBtn
 		await btn.waitForExist()
 		await btn.click()
-		await this.driver.pause(500)
+		await this.driver.pause(2000)
 		var btn = await this.okBtn
 		await btn.waitForExist()
 		await btn.click()
+		await this.driver.pause(500)
+		// var btn = await this.okBtn
+		// await btn.waitForExist()
+		// await btn.click()
 		await this.driver.pause(500)
 		var btn = await this.confirmBtn
 		await btn.waitForExist()

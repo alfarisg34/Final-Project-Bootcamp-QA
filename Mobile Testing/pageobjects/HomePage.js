@@ -8,7 +8,7 @@ class HomePage extends Page {
 	}
 
 	// element locators
-	get allowBtnEl() { return this.driver.$('~com.android.permissioncontroller:id/permission_allow_button') }
+	get allowBtnEl() { return this.driver.$('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[1]') }
 	
 	get loginBtnEl() { return this.driver.$('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.Button') }
 	get registerBtnEl() { return this.driver.$('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[3]/android.widget.Button') }
@@ -20,7 +20,7 @@ class HomePage extends Page {
 		await this.passwordEl.setValue('10203040')
 		await this.loginButtonEl.click()
 	}
-	async cloikAllowBtn () {
+	async clickAllowBtn () {
 		const result = await this.allowBtnEl
 		await result.waitForExist()
 		await result.click()
