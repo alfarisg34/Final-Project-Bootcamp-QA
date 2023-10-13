@@ -1,23 +1,35 @@
-Api Testing  
+Api Testing (reqres.in) 
   -login
   -register  
   -crud user
-Mobile testing
+Mobile testing (E-Commerce Demo)
   -e2e
-  -home page
+  -homePage
+  -Registerpage (case positif dan case negatif)
+  -Loginpage (case positif dan case negatif)
+  -inventoryPage
+    -fitur search (case positif dan case negatif)
 Performance Testing
-  -API login
-  -API register
-  -API users
-Load Testing (hybrid)
-  -login page
-  -register Page
-  -inventory page
-  -product
-  -cart
-  -women
-  -men
-Web testing
+  -API (reqres.in)
+    -login
+    -register
+    -users
+  -Web (ecommerce.tealiumdemo.com)
+    -Homepage
+    -Loginpage
+    -Registerpage
+    -WomenPage
+    -MenPage
+    -AccessoriesPage
+Load Testing (hybrid) (ecommerce.tealiumdemo.com)
+  -Login Page
+  -Register Page
+  -Inventory Page
+  -Product Page
+  -Cart Page
+  -Women Page
+  -Men Page
+Web testing (ecommerce.tealiumdemo.com)
   -e2e
   -Homepage  
     -fitur ganti bahasa
