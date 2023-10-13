@@ -14,7 +14,7 @@ describe('Users API Tests', function () {
     after(async function () {
         // await new Promise(res => setTimeout(res, 1000 * 60))
     })
-    it('Validasi API Get Lits Users', async function () {
+    it('Validasi API Get List Users', async function () {
         const response = await request.get('api/users')
         expect(response.status).to.equal(200)
         expect(response.headers['content-type']).to.include('application/json')
