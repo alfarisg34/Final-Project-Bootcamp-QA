@@ -17,6 +17,12 @@ import women_browser from './browser-test/06_women_page.browser.test.js'
 import men_browser from './browser-test/07_men_page.browser.test.js'
 
 export const options = {
+	thresholds: {
+		browser_web_vital_cls: ['p(75)<0.25'], //Cumulative Layout Shift (CLS)
+		browser_web_vital_fcp: ['p(75)<3000'], //First Contentful Paint (FCP)
+		browser_web_vital_lcp: ['p(75)<400'],  //Largest Contentful Paint (LCP)
+		browser_web_vital_ttfb: ['p(75)<1800'] //Time to First Byte (TTFB)
+	},
 	scenarios: {
 		protocolBased: {
 			exec: 'protocolBasedScript',
@@ -36,7 +42,7 @@ export const options = {
 	}
 }
 
-export async function browserBasedScript () {
+export async function browserBasedScript() {
 	const page = browser.newPage()
 
 	try {
@@ -52,7 +58,7 @@ export async function browserBasedScript () {
 	}
 }
 
-export function protocolBasedScript () {
+export function protocolBasedScript() {
 	login_protocol()
 	inventory_protocol()
 	register_protocol()

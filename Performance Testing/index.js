@@ -8,6 +8,8 @@ import users from './groups/API/users.js'
 import register from './groups/API/register.js'
 import login from './groups/API/login.js'
 
+import pages from './groups/Web/pages.js'
+
 const scenarioList = {
     smoke: smoke_test_scenario,
     average: average_load_test_scenario
@@ -27,6 +29,8 @@ export default function () {
     users()
     register()
     login()
+
+    pages()
 
     sleep(1)
 }
