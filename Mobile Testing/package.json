@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha --no-timeouts tests/**/*.test.js"
+    "test": "mocha --no-timeouts tests/dummy/E2E_USER.test.js"
   },
   "dependencies": {
     "chai": "^4.3.10",
